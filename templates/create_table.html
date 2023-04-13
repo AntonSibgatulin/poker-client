@@ -1,0 +1,54 @@
+<div id="alert$id" class="alert" style="display: none;">
+
+
+    <div class="body-alert">
+
+        <div class="flex-center">
+            <a style="font-size: 16pt;">Создать стол</a>
+        </div>
+
+        <div class="flex-center top15">
+            <input class="input100" type="text" name="name" value="Покерный стол">
+        </div>
+
+
+        <div class="pre-button top15" style="margin-top: 20px;display: block;">
+
+            <input type="range" min="1" max="6" id="my-range" list="my-datalist" value="2"/>
+            <datalist id="my-datalist" style="--list-length: 6;"><!--
+              ---><option>200</option><!--
+              ---><option>400</option><!--
+              ---><option>1k$</option><!--
+              ---><option>2k$</option><!--
+              ---><option>5k$</option><!--
+              ---><option>10k$</option><!--
+        
+            ---></datalist>
+        </div>
+
+
+        <div class="flex-center top15">
+            <a style="font-size: 12pt;">Кол-во игроков от 1-5</a>
+        </div>
+
+
+        <div class="flex-center top15">
+            <input type="number" maxlength="1" name="maximalUser" min="2" max="5" class="input100" value="5" style="width: 30%;" required/>
+        </div>
+
+
+        <div class="flex-center top15" style="justify-content: space-around;">
+            <a class="button" style="color: white;
+            font-size: 15pt;
+           " onclick="closeWindow(this)">Закрыть</a>
+
+
+            <a class="button" style="color: white;
+             font-size: 15pt;
+             "
+             onclick="createTableSend(this)">Создать</a>
+        </div>
+
+    </div>
+
+</div>

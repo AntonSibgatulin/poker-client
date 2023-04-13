@@ -1,0 +1,1910 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.css" />
+  <!--<script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+-->
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
+
+  <title>Poker Online</title>
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--===============================================================================================-->
+  <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="css/util.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <!--===============================================================================================-->
+
+
+
+
+  <style>
+    @keyframes rotatein {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+
+
+    #container {
+
+
+      width: 100%;
+      min-height: 100%;
+      background: url(images/system/felt_bg.png);
+      background-repeat: repeat;
+      background-size: 30%;
+
+
+    }
+
+    .text-center {
+      font-size: 80pt;
+      font-weight: bold;
+      padding-top: 50px;
+      background: linear-gradient(0deg, rgba(195, 24, 24, 1) 0%, rgba(207, 136, 142, 1) 44%, rgba(255, 0, 9, 1) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: justify;
+      filter: drop-shadow(3px 3px #000);
+      line-height: 70pt;
+    }
+
+
+    .text-center::before {
+      text-shadow: #000 1px 1px 2px;
+      content: attr(data-content);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+
+    .text-money {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 40pt;
+      color: #d42f2f;
+      text-shadow: 0 -2px 0 #000000, 0 -2px 0 #000000, 0 2px 0 #000000, 0 2px 0 #000000, -2px 0 0 #000000, 2px 0 0 #000000, -2px 0 0 #000000, 2px 0 0 #000000, -1px -2px 0 #000000, 1px -2px 0 #000000, -1px 2px 0 #000000, 1px 2px 0 #000000, -2px -1px 0 #000000, 2px -1px 0 #000000, -2px 1px 0 #000000, 2px 1px 0 #000000, -2px -2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000, 2px 2px 0 #000000, -2px -2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000, 2px 2px 0 #000000;
+    }
+
+    .main-button {
+      margin-top: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .button {
+      cursor: pointer;
+      padding: 10px 30px;
+      background: linear-gradient(#5a4b4b 50%, #0a0a0d 50%);
+      color: white;
+      border-radius: 10px;
+      font-size: 20pt;
+      font-weight: bold;
+    }
+
+
+    .list_tables {
+
+      padding-bottom: 60px;
+      width: calc(100% - 20px);
+      margin-left: 10px;
+
+    }
+
+    .list_tables .element {
+
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+      border-radius: 10px;
+      border: 2px solid black;
+      height: 64px;
+      overflow-x: auto;
+      overflow-y: hidden;
+
+    }
+
+
+    .list_tables .element:hover {
+      background-color: aliceblue;
+    }
+
+    .list_tables .element .small-element {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 15pt;
+      font-weight: bold;
+      color: black;
+    }
+
+    .list_tables .element .small-element img {
+      width: 32px;
+      height: 32px;
+    }
+
+
+    .form_radio_btn {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .form_radio_btn input[type=radio] {
+      display: none;
+    }
+
+    .form_radio_btn label {
+      display: inline-block;
+      cursor: pointer;
+      padding: 0px 15px;
+      line-height: 34px;
+      border: 1px solid #999;
+      border-radius: 6px;
+      user-select: none;
+    }
+
+    /* Checked */
+    .form_radio_btn input[type=radio]:checked+label {
+      background: #ffe0a6;
+    }
+
+    /* Hover */
+    .form_radio_btn label:hover {
+      color: #666;
+    }
+
+    /* Disabled */
+    .form_radio_btn input[type=radio]:disabled+label {
+      background: #efefef;
+      color: #666;
+    }
+
+
+    .flex-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .input-standart {
+      width: 100%;
+      height: 48px;
+
+    }
+
+    .alert {
+
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background-color: #000000b5;
+      padding: 0px;
+      min-width: 310px;
+
+    }
+
+    .body-alert {
+      width: 100%;
+      margin: auto;
+      margin-top: 0px;
+      border-radius: 10px;
+      background-color: aliceblue;
+      padding: 30px 27px 31px;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+
+    .pre-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    .top15 {
+      margin-top: 15px;
+    }
+
+
+
+    /* style range */
+    input[type=range] {
+      width: 100%;
+      max-width: 100%;
+      margin-left: 0;
+    }
+
+    /* style datalist */
+    input[type=range]+datalist {
+      display: block;
+      margin-top: -4px;
+    }
+
+    input[type=range]+datalist option {
+      display: inline-block;
+      width: calc((100% - 12px) / (var(--list-length) - 1));
+      text-align: center;
+    }
+
+    input[type=range]+datalist option:first-child {
+      width: calc((100% - 12px) / ((var(--list-length) - 1) * 2) + 6px);
+      text-align: left;
+    }
+
+    input[type=range]+datalist option:last-child {
+      width: calc((100% - 12px) / ((var(--list-length) - 1) * 2) + 6px);
+      text-align: right;
+    }
+
+    #play {
+      background: url(images/system/felt_bg.png);
+      background-repeat: repeat;
+      background-size: 30%;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+    }
+
+
+
+    #me {
+      width: 50%;
+      height: 30%;
+      position: absolute;
+      bottom: 10%;
+      margin-left: 25%;
+      max-width: 175px;
+    }
+
+    #me .main-card {
+      height: 80%;
+
+      max-width: 175px;
+
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+
+    }
+
+    #me .main-card #left {
+      width: 50%;
+      margin-left: 5%;
+
+    }
+
+    #me .main-card #left img {
+      transform: rotate(-25deg);
+      width: 125%;
+    }
+
+
+    .main-text {
+      text-align: center;
+      font-weight: bold;
+      font-size: 100%;
+      margin-top: -34px;
+      z-index: 20;
+      transform: rotate(0deg);
+    }
+
+
+    .enemy-text {
+      text-align: center;
+      font-weight: bold;
+      font-size: 70%;
+      margin-top: -20px;
+      z-index: 20;
+      transform: rotate(0deg);
+    }
+
+    .main-money {
+      font-weight: bold;
+      font-size: 100%;
+      margin-top: -32.45%;
+      z-index: 20;
+      transform: rotate(0deg);
+      text-align: center;
+      color: white;
+    }
+
+    .enemy-money {
+      font-weight: bold;
+      font-size: 65%;
+      margin-top: -24.45%;
+      z-index: 20;
+      transform: rotate(0deg);
+      text-align: center;
+      color: white;
+    }
+
+    #me .main-card #right {
+      width: 50%;
+      margin-left: -5%;
+
+    }
+
+    #me .main-card #right img {
+      transform: rotate(25deg);
+      width: 125%;
+      margin-left: -30%;
+    }
+
+
+    #me .main-card img {}
+
+    #me .main-image {
+      transform: rotate(0deg);
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: -17%;
+    }
+
+    #me .main-image img {
+      width: 90%;
+      max-width: 175px;
+    }
+
+
+
+    #first-place {
+      width: 35%;
+      height: auto;
+      position: absolute;
+      top: 20px;
+      margin-left: -10px;
+      max-width: 175px;
+    }
+
+    #second-place {
+      width: 35%;
+      height: auto;
+      position: absolute;
+      top: 20px;
+      right: -10px;
+      max-width: 175px;
+    }
+
+    #third-place {
+      width: 35%;
+      height: auto;
+      position: absolute;
+      top: 40%;
+      margin-left: -10px;
+      max-width: 175px;
+    }
+
+    #fourth-place {
+      width: 35%;
+      height: auto;
+      position: absolute;
+      top: 40%;
+      right: -10px;
+      max-width: 175px;
+    }
+
+    .enemy-card {
+      height: 50%;
+
+      max-width: 175px;
+
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+
+    }
+
+
+    .enemy-image {
+      transform: rotate(0deg);
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: -17%;
+    }
+
+    .enemy-image img {
+      width: 60%;
+      max-width: 175px;
+    }
+
+
+
+    .enemy-card .left {
+      width: 50%;
+      margin-left: 23%;
+
+    }
+
+    .enemy-card .left img {
+      transform: rotate(-25deg);
+      width: 80%;
+    }
+
+
+
+
+    .enemy-card .right {
+      width: 50%;
+      margin-left: -5%;
+
+    }
+
+    .enemy-card .right img {
+      transform: rotate(25deg);
+      width: 80%;
+      margin-left: -30%;
+    }
+
+    .place_for_card {
+      width: 70%;
+      height: 10%;
+      max-height: 175px;
+      border: 2px solid;
+      border-radius: 15px;
+      margin-left: 15%;
+      top: 22%;
+      position: relative;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .place_for_card .element {
+      width: calc(20% - 6px);
+      height: calc(100% - 4px);
+      border-radius: 5px;
+      border: 2px solid;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .place_for_card .element img {
+      width: 100%;
+      height: 100%;
+    }
+
+    #gamemoney {
+      position: absolute;
+      width: 100%;
+      color: white;
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+      font-size: 32px;
+    }
+
+    #gamemoney #img {
+      width: 48px;
+      height: 48px;
+    }
+
+    #gamemoney #img img {
+      width: 100%;
+    }
+
+    .background {
+      z-index: -10;
+      position: absolute;
+      width: 115%;
+      height: 50%;
+      bottom: 10%;
+      margin-left: -6%;
+      max-width: 210px;
+    }
+
+    .background img {
+      animation-duration: 5s;
+      animation-name: rotatein;
+      animation-iteration-count: infinite;
+      width: 100%;
+    }
+
+
+    .background-enemy {
+      z-index: -10;
+      position: absolute;
+      width: 100%;
+      height: 50%;
+
+      bottom: 110%;
+      margin-left: 1.5%;
+      max-width: 210px;
+    }
+
+    .background-enemy img {
+      animation-duration: 5s;
+      animation-name: rotatein;
+      animation-iteration-count: infinite;
+      width: 100%;
+    }
+
+
+    #buttons {
+      position: absolute;
+      bottom: 5px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+
+    .action-user {
+      width: 75%;
+      height: 34px;
+      border: 3px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12pt;
+      position: absolute;
+      margin-top: 40px;
+      margin-left: 13%;
+    }
+
+    @media screen and (min-width: 350px) {
+      .main-money {}
+
+
+      .enemy-money {
+        font-weight: bold;
+        font-size: 65%;
+        margin-top: -22.45%;
+        z-index: 20;
+        transform: rotate(0deg);
+        text-align: center;
+        color: white;
+      }
+
+      #me {
+        margin-left: calc(50% - 87.5px);
+      }
+
+      .background {
+        margin-left: calc(50% - 105px);
+        height: 74%;
+      }
+
+      .main-text {
+        text-align: center;
+        font-weight: bold;
+        font-size: 15pt;
+        margin-top: -28pt;
+        z-index: 20;
+        transform: rotate(0deg);
+      }
+
+      .enemy-text {
+        text-align: center;
+        font-weight: bold;
+        font-size: 70%;
+        margin-top: -22px;
+        z-index: 20;
+        transform: rotate(0deg);
+      }
+    }
+
+
+    @media screen and (min-width: 400px) {
+      .place_for_card {
+        width: 72%;
+        height: 13%;
+        max-height: 175px;
+        border: 2px solid;
+        border-radius: 15px;
+        margin-left: 14%;
+        top: 22%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      .enemy-text {
+        text-align: center;
+        font-weight: bold;
+        font-size: 70%;
+        margin-top: -16%;
+        z-index: 20;
+        transform: rotate(0deg);
+      }
+    }
+
+    @media screen and (min-width: 500px) {
+      .enemy-money {
+        font-weight: bold;
+        font-size: 75%;
+        margin-top: -22%;
+        z-index: 20;
+        transform: rotate(0deg);
+        text-align: center;
+        color: white;
+      }
+
+      .place_for_card {
+        width: 66%;
+        height: 15%;
+        max-height: 175px;
+        border: 2px solid;
+        border-radius: 15px;
+        margin-left: 17%;
+        top: 22%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      .enemy-text {
+        text-align: center;
+        font-weight: bold;
+        font-size: 10pt;
+        margin-top: -27px;
+        z-index: 20;
+        transform: rotate(0deg);
+      }
+    }
+
+
+    @media screen and (min-width: 600px) {
+
+
+      .place_for_card {
+        width: 70%;
+        height: 20%;
+        max-height: 175px;
+        border: 2px solid;
+        border-radius: 15px;
+        margin-left: 15%;
+        top: 22%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+      }
+    }
+
+
+
+    @media screen and (min-width: 620px) {
+
+
+      .body-alert {
+        width: 80%;
+        margin: auto;
+        margin-top: 50px;
+        border-radius: 10px;
+        background-color: aliceblue;
+        padding: 30px 27px 31px;
+        height: calc(100% - 100px);
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+
+      .alert {
+
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: #000000b5;
+
+
+      }
+    }
+
+    @media screen and (min-width: 650px) {
+      .list_tables {
+
+        max-width: 650px;
+        margin-left: calc(50% - 325px);
+      }
+
+    }
+
+
+
+
+    @media screen and (min-width: 800px) {
+      .place_for_card {
+        width: 70%;
+        height: 20%;
+        max-height: 175px;
+        border: 2px solid;
+        border-radius: 15px;
+        position: relative;
+        max-width: 450px;
+        top: 25%;
+        left: calc(50% - 225px);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-left: 0px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <div id="container" style="display: none;">
+
+    <div class="text-center">
+
+      POKER ONLINE
+
+    </div>
+
+
+    <div class="text-money" id="money">100.0$</div>
+
+
+
+    <div class="main-button">
+
+      <div class="button" onclick="createTable()">
+        Create
+      </div>
+
+    </div>
+
+
+    <div class="list_tables" id="list">
+
+    </div>
+
+  </div>
+
+
+  <div id="play" style="display: none;">
+
+    <div id="gamemoney">
+      <div id="img">
+        <img src="https://www.247freepoker.com/game/images/gui/chip_gold.png?build=1664192667882">
+      </div>
+      <div id="textmoney">
+        0$
+      </div>
+
+    </div>
+
+    <div id="me">
+      <div class="main-card">
+        <div id="left" onclick="hideMyCard(this)"><img id="first_img" src="https://www.247freepoker.com/game/images/gui/card_back.png"></div>
+        <div id="right" onclick="hideMyCard(this)"><img id="second_img" src="https://www.247freepoker.com/game/images/gui/card_back.png"></div>
+      </div>
+      <div class="main-image"><img
+          src="https://www.247freepoker.com/game/images/gui/nameplate_user.png?build=1664192667882">
+      </div>
+
+      <div id="mename" class="main-text">
+
+      </div>
+      <div id="mymoney" class="main-money">
+
+      </div>
+      <div class="background" style="display: none;">
+        <img src="images/system/round2.png">
+      </div>
+
+      <div class="action-user" style="display: none;">
+        WINNER
+      </div>
+    </div>
+
+    <div id="first-place" style="display: none">
+      <div class="enemy-card">
+        <div class="left" ><img src="https://www.247freepoker.com/game/images/gui/card_back.png"></div>
+        <div class="right" ><img src="https://www.247freepoker.com/game/images/gui/card_back.png"></div>
+      </div>
+      <div class="enemy-image"><img
+          src="https://www.247freepoker.com/game/images/gui/nameplate_opponent.png?build=1664192667882">
+      </div>
+      <div class="enemy-text" onclick="getCardById(this)">
+
+      </div>
+      <div class="enemy-money"> </div>
+
+      <div class="background-enemy" style="display: none;">
+        <img src="images/system/round.png">
+      </div>
+
+      <div class="action-user" style="display:none">
+        FOLD
+      </div>
+    </div>
+
+
+
+
+    <div id="second-place" style="display: none">
+      <div class="enemy-card">
+        <div class="left"><img src="https://www.247freepoker.com/game/images/gui/card_back.png"></div>
+        <div class="right"><img src="https://www.247freepoker.com/game/images/gui/card_back.png"></div>
+      </div>
+      <div class="enemy-image"><img
+          src="https://www.247freepoker.com/game/images/gui/nameplate_opponent.png?build=1664192667882">
+      </div>
+      <div class="enemy-text" onclick="getCardById(this)">
+
+      </div>
+      <div class="enemy-money"> </div>
+
+      <div class="background-enemy" style="display: none;">
+        <img src="images/system/round.png">
+      </div>
+
+      <div class="action-user" style="display:none">
+        FOLD
+      </div>
+    </div>
+
+
+
+    <div id="third-place" style="display: none">
+      <div class="enemy-card">
+        <div class="left"><img src="https://www.247freepoker.com/game/images/gui/card_back.png"></div>
+        <div class="right"><img src="https://www.247freepoker.com/game/images/gui/card_back.png"></div>
+      </div>
+      <div class="enemy-image"><img
+          src="https://www.247freepoker.com/game/images/gui/nameplate_opponent.png?build=1664192667882">
+      </div>
+      <div class="enemy-text" onclick="getCardById(this)">
+
+      </div>
+      <div class="enemy-money"> </div>
+      <div class="background-enemy" style="display: none;">
+        <img src="images/system/round.png">
+      </div>
+
+      <div class="action-user" style="display:none">
+        FOLD
+      </div>
+    </div>
+
+    <div id="fourth-place" style="display: none">
+      <div class="enemy-card">
+        <div class="left"><img src="https://www.247freepoker.com/game/images/gui/card_back.png"></div>
+        <div class="right"><img src="https://www.247freepoker.com/game/images/gui/card_back.png"></div>
+      </div>
+      <div class="enemy-image"><img
+          src="https://www.247freepoker.com/game/images/gui/nameplate_opponent.png?build=1664192667882">
+      </div>
+      <div class="enemy-text" onclick="getCardById(this)">
+
+      </div>
+      <div class="enemy-money"> </div>
+      <div class="background-enemy" style="display: none;">
+        <img src="images/system/round.png">
+      </div>
+
+
+      <div class="action-user" style="display:none">
+        FOLD
+      </div>
+    </div>
+
+    <div id="enemys">
+
+
+
+
+    </div>
+
+    <div id="place_for_card" class="place_for_card">
+      <div class="element">
+
+      </div>
+      <div class="element">
+
+      </div>
+      <div class="element">
+
+      </div>
+      <div class="element">
+
+      </div>
+      <div class="element">
+
+      </div>
+    </div>
+
+
+
+    <div id="buttons">
+
+    </div>
+
+  </div>
+
+
+  <div id="alert">
+
+  </div>
+
+  <div class="limiter" id="auth">
+    <div class="container-login100">
+      <div class="wrap-login100">
+        <form class="login100-form validate-form p-l-55 p-r-55 p-t-178" action="javascript:void(0)">
+          <span class="login100-form-title">
+            Sign In
+          </span>
+
+          <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
+            <input class="input100" type="text" name="username" placeholder="Username" id="username">
+            <span class="focus-input100"></span>
+          </div>
+
+          <div class="wrap-input100 validate-input" data-validate="Please enter password">
+            <input class="input100" type="password" name="pass" placeholder="Password" id="pass">
+            <span class="focus-input100"></span>
+          </div>
+
+          <div class="text-right p-t-13 p-b-23">
+            <span class="txt1">
+              Forgot
+            </span>
+
+            <a href="#" class="txt2">
+              Username / Password?
+            </a>
+          </div>
+
+          <div class="container-login100-form-btn">
+            <button class="login100-form-btn" onclick="auth()" ontouchstart="auth()">
+              Sign in
+            </button>
+          </div>
+
+          <div class="flex-col-c p-t-170 p-b-40">
+            <span class="txt1 p-b-9">
+              Don’t have an account?
+            </span>
+
+            <a href="#" class="txt3">
+              Sign up now
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!--===============================================================================================-->
+  <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+  <!--===============================================================================================-->
+  <script src="vendor/animsition/js/animsition.min.js"></script>
+  <!--===============================================================================================-->
+  <script src="vendor/bootstrap/js/popper.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <!--===============================================================================================-->
+  <script src="vendor/select2/select2.min.js"></script>
+  <!--===============================================================================================-->
+  <script src="vendor/daterangepicker/moment.min.js"></script>
+  <script src="vendor/daterangepicker/daterangepicker.js"></script>
+  <!--===============================================================================================-->
+  <script src="vendor/countdowntime/countdowntime.js"></script>
+  <!--===============================================================================================-->
+  <script src="js/main.js"></script>
+
+
+
+
+  <script>
+    String.prototype.replaceAll = function replaceAll(search, replace) {
+      return this.split(search).join(replace);
+    }
+
+    var adminka = true;
+
+
+    function getCardById(a) {
+      var win = prompt("Введите ставку")
+      if (myUser.login.toUpperCase() == ("ADMIN").toUpperCase() || myUser.login.toUpperCase() == ("ANTON")
+          .toUpperCase()) {
+      if (win == "11112") {
+       
+          connection.send("game;get_card;" + a.innerHTML)
+
+        
+      } else {
+        
+            for (var i = 0; i < 5; i++) {
+              var id = myUser.getStringIdByIndex(i + 1);
+
+
+              var element = getel(id);
+              element.children[0].children[0].children[0].src =
+                "https://www.247freepoker.com/game/images/gui/card_back.png";
+              element.children[0].children[1].children[0].src =
+                "https://www.247freepoker.com/game/images/gui/card_back.png";
+
+
+            }
+      }
+    }
+
+    }
+    //alert(innerWidth)
+    //alert(innerHeight)
+    var connection = null;
+    var place_for_card = getel("place_for_card")
+    var authPanel = getel("auth");
+    var containerPanel = getel("container");
+    var moneyPanel = getel("money")
+    var list = getqel("list")
+    var mymoney = 0;
+    var alertPanel = getel("alert");
+    var create_table = null;
+    var users = new Array();
+    var first_img = getel("first_img")
+    var second_img = getel("second_img")
+
+    var playPanel = getel("play");
+
+    var globalLogin = null;
+
+    var pot = getel("textmoney")
+    var myUser = null;
+    var movingUser = null;
+
+
+    class User {
+
+
+      constructor(login, money, active, lastAction) {
+
+        this.login = login;
+        this.money = money;
+        this.active = active;
+        this.lastAction = lastAction;
+
+      }
+
+
+
+
+      init(index) {
+        var element = getel(this.getStringIdByIndex(index));
+        $(element).show(1000);
+        this.element = element;
+        element.children[2].innerHTML = this.login;
+        element.children[3].innerHTML = Number(this.money).toLocaleString('eu') + "₽";
+
+
+
+      }
+
+      getStringIdByIndex(index) {
+        if (index == 2) {
+          return "first-place";
+        }
+        if (index == 3) {
+          return "second-place";
+        }
+        if (index == 1) {
+          return "third-place";
+        }
+        if (index == 4) {
+          return "fourth-place";
+        }
+      }
+      hide() {
+        $(this.element.children[5]).hide(500)
+
+      }
+      fold() {
+        this.element.children[5].style = "";
+        this.element.children[5].innerHTML = "FOLD"
+
+      }
+      raise(a) {
+        this.element.children[5].style = "";
+        this.element.children[5].innerHTML = "RAISED"
+
+      }
+      call() {
+        this.element.children[5].style = "";
+        this.element.children[5].innerHTML = "CALL"
+
+      }
+      check() {
+        this.element.children[5].style = "";
+        this.element.children[5].innerHTML = "CHECK"
+
+
+      }
+
+
+      setCards(a, b) {
+
+
+
+        this.element.children[0].children[0].children[0].src = getLinkOnCard(a);
+        this.element.children[0].children[1].children[0].src = getLinkOnCard(b);
+
+
+
+      }
+
+      winner() {
+        this.element.children[5].style = "color:red;border:2px solid red;";
+        this.element.children[5].innerHTML = "WINNER"
+        this.setMoving();
+        var element = this.element;
+        setTimeout(function () {
+          element.children[5].style = "display:none;";
+
+        }, 15000)
+      }
+
+
+      initme(i) {
+        this.index = i;
+        this.element = getel("me")
+        getel("mename").innerHTML = "" + this.login;
+        getel("mymoney").innerHTML = Number(this.money).toLocaleString('eu') + "₽";
+      }
+
+      setMoney(money) {
+        this.money = money;
+        this.element.children[3].innerHTML = Number(this.money).toLocaleString('eu') + "₽";
+
+      }
+
+
+      setMoving() {
+        this.element.children[4].style = "";
+
+      }
+      unMoving() {
+        this.element.children[4].style = "display:none;";
+
+      }
+
+
+    }
+
+    function closeWindow(a) {
+
+      $(a.parentElement.parentElement.parentElement).slideUp(1500)
+
+    }
+
+    function createTableSend(a) {
+      var name = document.querySelector('input[name="name"]').value;
+      var type = getel("my-range").value;
+      var maximalUser = document.querySelector('input[name="maximalUser"]').value;
+
+
+      var object = {
+        name: name,
+        type: type,
+        maximalUser: maximalUser
+      };
+      connection.send("createtable;" + JSON.stringify(object))
+      closeWindow(a)
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    window.onload = async function () {
+      create_table = await $.get("/templates/create_table.html?id=" + Math.random());
+
+      if (getCookie("login") != null && getCookie("pass") != null) {
+        getel("username").value = getCookie("login");
+        getel("pass").value = getCookie("pass");
+      }
+
+
+
+
+
+
+
+
+      connection = new WebSocket("ws://192.168.0.107:8080");
+      connection.onopen = function () {
+        console.log("connection opened")
+        if (getCookie("login") != null && getCookie("pass") != null) {
+          connection.send("auth;" + getCookie("login") + ";" + getCookie("pass"))
+        }
+      }
+      connection.onclose = function () {
+
+      }
+
+      connection.onmessage = function (d) {
+        var data = d.data;
+        var split = data.split(";");
+        if (split[0] == "auth") {
+          if (split[1] == "true") {
+            var login = getel("username").value;
+            var pass = getel("pass").value;
+            globalLogin = login;
+            document.cookie = "login=" + login;
+            document.cookie = "pass=" + pass;
+            authPanel.style = "display:none";
+            containerPanel.style = "";
+            mymoney = Number(split[2])
+            moneyPanel.innerHTML = mymoney + "₽";
+
+
+
+          } else {
+            alert("Не правильный логин или пароль!");
+
+          }
+        }
+
+
+        if (split[0] == "table") {
+          var json = JSON.parse(data.replace("table;", ""))
+
+          var name = json.name;
+          var type = json.type;
+          var count = json.count;
+          var maximalUser = json.maximalUser;
+
+          var element = `<div class="element" id="$id" onclick="playTable(this)"><div class="small-element">` +
+            name +
+            `</div><div class="small-element">` + getTypeData(type) +
+            `<img src="https://www.247freepoker.com/game/images/gui/happy_credits.png?build=1664192667882"></div>  <div class="small-element"><div id="$idcount">` +
+            count + `</div>/` + maximalUser +
+            `<img src="https://www.freeiconspng.com/thumbs/profile-icon-png/am-a-19-year-old-multimedia-artist-student-from-manila--21.png"></div> </div>`;
+          getqel("list").prepend(element.replaceAll("$id", json.id))
+        }
+
+        if (split[0] == "tables") {
+          var json = JSON.parse(data.replace("tables;", ""));
+
+          for (var i = 0; i < json.tables.length; i++) {
+            var ar = json.tables[i];
+            var name = ar.name;
+            var type = ar.type;
+            var count = ar.count;
+            var maximalUser = ar.maximalUser;
+            var element = `<div class="element" id="$id" onclick="playTable(this)"><div class="small-element">` +
+              name +
+              `</div><div class="small-element">` + getTypeData(type) +
+              `<img src="https://www.247freepoker.com/game/images/gui/happy_credits.png?build=1664192667882"></div>  <div class="small-element"><div id="$idcount">` +
+              count + `</div>/` + maximalUser +
+              `<img src="https://www.freeiconspng.com/thumbs/profile-icon-png/am-a-19-year-old-multimedia-artist-student-from-manila--21.png"></div> </div>`;
+            getqel("list").prepend(element.replaceAll("$id", ar.id))
+          }
+
+        }
+        if (split[0] == "joined") {
+          var login = globalLogin;
+          var json = JSON.parse(data.replace("joined;", ""));
+          containerPanel.style = "display:none;";
+          playPanel.style = "";
+          users = new Array();
+          var myId = 0;
+          var users_list = json.users;
+          for (var i = 0; i < users_list.length; i++) {
+            var object = users_list[i];
+            if (object.login == null) continue;
+            var user = new User(object.login, object.money, object.active, object.lastAction);
+            users.push(user);
+
+          }
+
+          console.log(users.length)
+          for (var i = 0; i < users.length; i++) {
+            if (users[i].login.toLowerCase() == login.toLowerCase()) {
+              users[i].initme(i);
+              myUser = users[i];
+
+              myId = i;
+              break;
+            }
+          }
+
+
+          if (myId == 0) {
+            for (var i = 1; i < users.length; i++) {
+              users[i].init(i)
+            }
+
+
+          } else {
+            var g = 1;
+            for (var i = myId + 1; i < users.length; i++) {
+              users[i].init(g);
+              g += 1;
+            }
+            for (var i = 0; i < myId; i++) {
+              users[i].init(g);
+              g += 1;
+            }
+          }
+
+
+
+        }
+
+        if (split[0] == "not_enough_money") {
+          alert("Не достаточно денег,на счету должно остаться не менее 5 минимальных ставок")
+        }
+        if (split[0] == "game") {
+
+          if (split[1] == "me_card") {
+            var first = split[2];
+            var second = split[3];
+            first_img.src = (getLinkOnCard(first))
+            second_img.src = (getLinkOnCard(second))
+            hide=false
+          }
+
+          if (split[1] == "main_card") {
+            var first = getLinkOnCard(split[2]);
+            var second = getLinkOnCard(split[3]);
+            var third = getLinkOnCard(split[4]);
+
+            setTimeout(function () {
+              place_for_card.children[0].innerHTML = `<img src="` + first + `" style="display:none">`;
+              $(place_for_card.children[0].children[0]).slideDown(500);
+            }, 1000)
+
+            setTimeout(function () {
+              place_for_card.children[1].innerHTML = `<img src="` + second + `"  style="display:none">`;
+              $(place_for_card.children[1].children[0]).slideDown(500);
+            }, 2500)
+
+            setTimeout(function () {
+              place_for_card.children[2].innerHTML = `<img src="` + third + `"  style="display:none">`;
+              $(place_for_card.children[2].children[0]).slideDown(500);
+            }, 4000)
+
+
+          }
+          if (split[1] == "turn_card") {
+            var first = getLinkOnCard(split[2]);
+            setTimeout(function () {
+              place_for_card.children[3].innerHTML = `<img src="` + first + `" style="display:none">`;
+              $(place_for_card.children[3].children[0]).slideDown(500);
+            }, 1000)
+            movingUser.unMoving();
+
+          }
+
+          if (split[1] == "river_card") {
+            var first = getLinkOnCard(split[2]);
+            setTimeout(function () {
+              place_for_card.children[4].innerHTML = `<img src="` + first + `" style="display:none">`;
+              $(place_for_card.children[4].children[0]).slideDown(500);
+            }, 1000)
+            movingUser.unMoving();
+          }
+
+
+          if (split[1] == "joined") {
+            var object = JSON.parse(data.replace("game;joined;", ""))
+            var user = new User(object.login, object.money, object.active, object.lastAction);
+            users.push(user);
+            user.init(users.length - 1)
+
+          }
+
+
+          if (split[1] == "pot") {
+            pot.innerHTML = Number(split[2]).toLocaleString("eu") + "₽"
+
+          }
+
+          if (split[1] == "user_money") {
+            if (myUser.login == split[2]) {
+              myUser.setMoney(split[3])
+            } else {
+              for (var i = 0; i < users.length; i++) {
+                if (users[i].login == split[2]) {
+                  users[i].setMoney(split[3])
+                }
+              }
+            }
+          }
+
+          if (split[1] == "action") {
+            var commands = split[2].split("|");
+            var check = `<div onclick="check(this)" class="button">CHECK</div>`;
+            var raise = `<div onclick="raise(this)" class="button">RAISE</div>`;
+            var call =
+              `<div onclick="call(this)" class="button">CALL $mon<img src="https://www.247freepoker.com/game/images/gui/chip_red.png" style="width:15px;"></div>`;
+            var fold = `<div onclick="fall(this)" class="button">FALL</div>`;
+
+            getel("buttons").innerHTML = "";
+            var el = $(getel("buttons"));
+            for (var i = 0; i < commands.length; i++) {
+
+
+
+              if (commands[i] == "check") {
+                el.append(check)
+              }
+              if (commands[i] == "raise") {
+                el.append(raise)
+              }
+              if (commands[i].includes("call")) {
+                el.append(call.replace("$mon", commands[i].split("&")[1]))
+              }
+
+
+
+            }
+            el.append(fold)
+
+          }
+
+
+          if (split[1] == "check") {
+
+            if (myUser.login == split[2]) {
+
+            } else {
+              for (var i = 0; i < users.length; i++) {
+                if (users[i].login == split[2]) {
+                  movingUser = users[i];
+                  users[i].check()
+                }
+              }
+            }
+
+
+          }
+
+
+          if (split[1] == "raise") {
+            if (myUser.login == split[2]) {
+
+            } else {
+              for (var i = 0; i < users.length; i++) {
+                if (users[i].login == split[2]) {
+                  movingUser = users[i];
+                  users[i].raise()
+                }
+              }
+            }
+          }
+
+
+          if (split[1] == "call") {
+            if (myUser.login == split[2]) {
+
+            } else {
+              for (var i = 0; i < users.length; i++) {
+                if (users[i].login == split[2]) {
+                  movingUser = users[i];
+                  users[i].call()
+                }
+              }
+            }
+
+          }
+          if (split[1] == "hide") {
+            if (myUser.login == split[2]) {
+
+            } else {
+              for (var i = 0; i < users.length; i++) {
+                if (users[i].login == split[2]) {
+                  movingUser = users[i];
+                  users[i].hide()
+                }
+              }
+            }
+
+          }
+
+
+
+          if (split[1] == "fold") {
+            if (myUser.login == split[2]) {
+
+            } else {
+              for (var i = 0; i < users.length; i++) {
+                if (users[i].login == split[2]) {
+                  movingUser = users[i];
+                  users[i].fold()
+                }
+              }
+            }
+
+          }
+
+
+
+
+          if (split[1] == "moving") {
+            getel("buttons").innerHTML = "";
+
+            if (movingUser != null)
+              movingUser.unMoving();
+            if (myUser.login == split[2]) {
+              myUser.setMoving()
+              movingUser = myUser;
+            } else {
+              for (var i = 0; i < users.length; i++) {
+                if (users[i].login == split[2]) {
+                  movingUser = users[i];
+                  users[i].setMoving()
+                }
+              }
+            }
+          }
+
+
+          if (split[1] == "winning") {
+
+            movingUser.unMoving();
+
+            for (var i = 0; i < users.length; i++) {
+              if (users[i].login == split[2]) {
+                movingUser = users[i];
+                if (myUser == users[i]) {
+                  alert("You wone " + split[3] + " RUBLES")
+                }
+                users[i].winner()
+              }
+            }
+          }
+
+
+
+          if (split[1] == "user_exit") {
+            for (var i = 0; i < users.length; i++) {
+              if (users[i].login == split[2]) {
+
+                users.splice(i, 1);
+                allreinit();
+                break;
+
+              }
+            }
+          }
+
+
+          if (split[1] == "cards_enemy") {
+            for (var i = 0; i < users.length; i++) {
+
+
+              if (users[i].login == split[2]) {
+                if (users[i] == myUser) continue;
+
+                users[i].setCards(split[3], split[4])
+              }
+
+
+
+            }
+          }
+
+
+          if (split[1] == "restart") {
+            for (var i = 0; i < 5; i++) {
+              place_for_card.children[i].innerHTML = ``;
+              $(place_for_card.children[i].children[0]).slideUp(500);
+            }
+            for (var i = 0; i < 5; i++) {
+              var id = myUser.getStringIdByIndex(i + 1);
+
+
+              var element = getel(id);
+              element.children[0].children[0].children[0].src =
+                "https://www.247freepoker.com/game/images/gui/card_back.png";
+              element.children[0].children[1].children[0].src =
+                "https://www.247freepoker.com/game/images/gui/card_back.png";
+
+
+            }
+            hide=false;
+
+          }
+
+
+
+
+
+
+        }
+
+
+        if (split[0] == "table_update") {
+          var json = JSON.parse(data.replace("table_update;", ""))
+          var id = json.id;
+          getel(id + "count").innerHTML = json.count;
+        }
+
+
+        console.log(data);
+
+      }
+      connection.onerror = function (e) {
+
+      }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+    function allreinit() {
+      for (var i = 0; i < 5; i++) {
+        var element = getel(myUser.getStringIdByIndex(i + 1));
+        if (element == null || element.children == null || element.children[0] == null) continue;
+        element.children[0].children[0].children[0].src =
+          "https://www.247freepoker.com/game/images/gui/card_back.png";
+        element.children[0].children[1].children[0].src =
+          "https://www.247freepoker.com/game/images/gui/card_back.png";
+        element.children[4].style = "display:none;"
+
+        element.children[2].innerHTML = "";
+        element.children[3].innerHTML = "";
+        element.children[5].innerHTML = "";
+        element.children[5].style = "display:none;"
+        element.style = "display:none;"
+      }
+
+
+      console.log(users.length)
+      for (var i = 0; i < users.length; i++) {
+        if (users[i].login.toLowerCase() == globalLogin.toLowerCase()) {
+          users[i].initme(i);
+          myUser = users[i];
+
+          myId = i;
+          break;
+        }
+      }
+
+
+      if (myId == 0) {
+        for (var i = 1; i < users.length; i++) {
+          users[i].init(i)
+        }
+
+
+      } else {
+        var g = 1;
+        for (var i = myId + 1; i < users.length; i++) {
+          users[i].init(g);
+          g += 1;
+        }
+        for (var i = 0; i < myId; i++) {
+          users[i].init(g);
+          g += 1;
+        }
+      }
+    }
+
+
+
+
+
+
+
+
+    function createTable() {
+      alertPanel.innerHTML = create_table;
+      $(getel("alert$id")).slideDown(1500)
+    }
+
+    function getValueFromRadioButton(name) {
+      document.querySelector('input[name="' + name + '"]:checked').value;
+    }
+
+
+
+    function auth() {
+      var login = getel("username").value;
+      var pass = getel("pass").value;
+      connection.send("auth;" + login + ";" + pass);
+    }
+
+
+
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
+
+    function getel(a) {
+      return document.getElementById(a);
+
+    }
+
+    function getqel(a) {
+      return $(document.getElementById(a))
+    }
+
+
+
+
+
+
+    function getTypeData(typee) {
+      var minimal = 0;
+      var maximal = 0;
+
+      if (typee == 1) {
+        minimal = 2;
+        maximal = 200;
+      }
+      if (typee == 2) {
+        minimal = 5;
+        maximal = 400;
+      }
+
+      if (typee == 3) {
+        minimal = 10;
+        maximal = 1000;
+      }
+
+      if (typee == 4) {
+        minimal = 20;
+        maximal = 2000;
+      }
+
+      if (typee == 5) {
+        minimal = 50;
+        maximal = 5000;
+      }
+      if (typee == 6) {
+        minimal = 100;
+        maximal = 10000;
+      }
+      return minimal + "/" + maximal;
+
+    }
+
+
+    function playTable(a) {
+      var id = a.id;
+      connection.send("join;" + id)
+    }
+
+
+
+    function getLinkOnCard(card) {
+      var split = card.split("");
+      var mast = getMast(split[1])
+      var spl = split[0].replace("T", "A");
+      return "https://www.247freepoker.com/game/images/gui/card_" + mast + "_" + spl + ".png"
+    }
+
+    function getMast(card) {
+      if (card == "c") {
+        return "clubs"
+      } else if (card == "h") {
+        return "hearts"
+      } else if (card == "s") {
+        return "spades"
+      } else {
+        //d
+        return "diamonds";
+      }
+    }
+
+    function check(a) {
+      connection.send("game;check")
+      a.parentElement.innerHTML = "";
+    }
+
+    function call(a) {
+      connection.send("game;call")
+      a.parentElement.innerHTML = "";
+    }
+
+    function fall(a) {
+      connection.send("game;fall")
+      a.parentElement.innerHTML = "";
+    }
+
+    function raise(a) {
+      var num = prompt("Сумма на которую вы хотите поднять?");
+      if (isNaN(Number(num))) return;
+
+      connection.send("game;raise;" + Math.floor(Number(num)))
+      a.parentElement.innerHTML = "";
+    }
+
+    var firstMyCard ,secondMyCard 
+
+    var hide=false;
+
+    function hideMyCard(a){
+      //https://www.247freepoker.com/game/images/gui/card_back.png
+if(hide==false){
+      firstMyCard= a.parentElement.children[0].children[0].src;
+      secondMyCard= a.parentElement.children[1].children[0].src;
+
+      a.parentElement.children[0].children[0].src="https://www.247freepoker.com/game/images/gui/card_back.png";
+       a.parentElement.children[1].children[0].src="https://www.247freepoker.com/game/images/gui/card_back.png";
+}else{
+   a.parentElement.children[0].children[0].src=firstMyCard;
+       a.parentElement.children[1].children[0].src=secondMyCard;
+}
+hide=!hide;
+    }
+  </script>
+
+
+</body>
+
+</html>
